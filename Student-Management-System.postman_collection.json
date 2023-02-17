@@ -1,0 +1,1025 @@
+{
+	"info": {
+		"_postman_id": "12e32fc6-c638-4c63-8349-773d88314e7b",
+		"name": "Student-Management-System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6740358"
+	},
+	"item": [
+		{
+			"name": "School",
+			"item": [
+				{
+					"name": "Add School",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Helwan International School\",\r\n    \"country\" : \"Egypt\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/school",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"school"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add School",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Helwan International School\",\r\n    \"country\" : \"Egypt\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/school",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"school"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Feb 2023 07:45:43 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Helwan International School\",\n    \"country\": \"Egypt\"\n}"
+						}
+					]
+				},
+				{
+					"name": "School Add Courses",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"courseName\": \"Java\",\r\n        \"courseCode\": \"JAVA-50\",\r\n        \"department\": \"CS\"\r\n    },\r\n    {\r\n        \"courseName\": \"Signal\",\r\n        \"courseCode\": \"Signal-20\",\r\n        \"department\": \"IT\"\r\n    },\r\n    {\r\n        \"courseName\": \"Database\",\r\n        \"courseCode\": \"DB-1\",\r\n        \"department\": \"IS\"\r\n    },\r\n        {\r\n        \"courseName\": \"PL1\",\r\n        \"courseCode\": \"PL-1\",\r\n        \"department\": \"CS\"\r\n    },\r\n    {\r\n        \"courseName\": \"ML\",\r\n        \"courseCode\": \"ML-20\",\r\n        \"department\": \"AI\"\r\n    },\r\n    {\r\n        \"courseName\": \"DS\",\r\n        \"courseCode\": \"DS-1\",\r\n        \"department\": \"DS\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/school/courses",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"school",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Add Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mohamed Ramadan\",\r\n    \"email\": \"Mohamed.Ramadan611@gmail.com\",\r\n    \"password\": \"Mohamed\",\r\n    \"level\": \"3\",\r\n    \"mobile\": \"01149460094\",\r\n    \"schoolStudent\": {\r\n        \"name\": \"Helwan International School\",\r\n        \"country\": \"Egypt\"\r\n    },\r\n    \"coursesList\": [\r\n        {\r\n            \"courseName\": \"PL1\",\r\n            \"courseCode\": \"PL-1\",\r\n            \"department\": \"CS\"\r\n        },\r\n        {\r\n            \"courseName\": \"Java\",\r\n            \"courseCode\": \"JAVA-20\",\r\n            \"department\": \"CS\"\r\n        },\r\n        {\r\n            \"courseName\": \"Database\",\r\n            \"courseCode\": \"DB-20\",\r\n            \"department\": \"IS\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/student",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Student",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Mohamed Ramadan\",\r\n    \"email\": \"Mohamed.Ramadan611@gmail.com\",\r\n    \"password\": \"Mohamed\",\r\n    \"level\": \"3\",\r\n    \"mobile\": \"01149460094\",\r\n    \"schoolStudent\": {\r\n        \"name\": \"Narmer International School\",\r\n        \"country\": \"Egypt\"\r\n    },\r\n    \"coursesList\": [\r\n        {\r\n            \"courseName\": \"Spring Boot\",\r\n            \"courseCode\": \"SP-20\",\r\n            \"department\": \"CS\"\r\n        },\r\n        {\r\n            \"courseName\": \"Java\",\r\n            \"courseCode\": \"JAVA-20\",\r\n            \"department\": \"CS\"\r\n        },\r\n        {\r\n            \"courseName\": \"Database\",\r\n            \"courseCode\": \"DB-20\",\r\n            \"department\": \"CS\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/student",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"student"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Feb 2023 21:08:23 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Mohamed Ramadan\",\n    \"email\": \"Mohamed.Ramadan611@gmail.com\",\n    \"password\": \"Mohamed\",\n    \"level\": 3,\n    \"mobile\": \"01149460094\",\n    \"schoolStudent\": {\n        \"id\": 1,\n        \"name\": \"Narmer International School\",\n        \"country\": \"Egypt\"\n    },\n    \"coursesList\": [\n        {\n            \"id\": 1,\n            \"courseName\": \"Spring Boot\",\n            \"courseCode\": \"SP-20\",\n            \"department\": \"CS\"\n        },\n        {\n            \"id\": 2,\n            \"courseName\": \"Java\",\n            \"courseCode\": \"JAVA-20\",\n            \"department\": \"CS\"\n        },\n        {\n            \"id\": 3,\n            \"courseName\": \"Database\",\n            \"courseCode\": \"DB-20\",\n            \"department\": \"CS\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Another Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ahmed Gamal\",\r\n    \"email\": \"AhmedGamal@gmail.com\",\r\n    \"password\": \"AhmedGamal\",\r\n    \"level\": \"3\",\r\n    \"mobile\": \"01149464193\",\r\n    \"schoolStudent\": {\r\n        \"name\": \"Helwan International School\",\r\n        \"country\": \"Egypt\"\r\n    },\r\n    \"coursesList\": [\r\n        {\r\n            \"courseName\": \"Signal\",\r\n            \"courseCode\": \"Signal-20\",\r\n            \"department\": \"IT\"\r\n        },\r\n        {\r\n            \"courseName\": \"ML\",\r\n            \"courseCode\": \"ML-20\",\r\n            \"department\": \"AI\"\r\n        },\r\n        {\r\n            \"courseName\": \"DS\",\r\n            \"courseCode\": \"DS-1\",\r\n            \"department\": \"DS\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/student",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/student/courses",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Courses that not have exams yet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/student/courses",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add School To Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/student/addschool?school=Helwan International School&email=AhmedGamal@gmail.com",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"addschool"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "Mohamed.Ramadan611@gmail.com",
+									"disabled": true
+								},
+								{
+									"key": "school",
+									"value": "Helwan International School"
+								},
+								{
+									"key": "email",
+									"value": "AhmedGamal@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Courses To Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/student/addcourses?CourseName1=Java&CourseName2=Database&email=AhmedGamal@gmail.com",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"addcourses"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "Mohamed.Ramadan611@gmail.com",
+									"disabled": true
+								},
+								{
+									"key": "CourseName1",
+									"value": "Java"
+								},
+								{
+									"key": "CourseName2",
+									"value": "Database"
+								},
+								{
+									"key": "email",
+									"value": "AhmedGamal@gmail.com"
+								},
+								{
+									"key": "CourseName1",
+									"value": "PL1",
+									"disabled": true
+								},
+								{
+									"key": "CourseName2",
+									"value": "DS",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Answer For Java Exam",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/student/answerExam?email=AhmedGamal@gmail.com&courseName=Signal&answer=No",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"answerExam"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "Mohamed.Ramadan611@gmail.com",
+									"disabled": true
+								},
+								{
+									"key": "courseName",
+									"value": "Java",
+									"disabled": true
+								},
+								{
+									"key": "answer",
+									"value": "Yes",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "AhmedGamal@gmail.com"
+								},
+								{
+									"key": "courseName",
+									"value": "Signal"
+								},
+								{
+									"key": "answer",
+									"value": "No"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/student/allstudents",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"allstudents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All PASS Students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/student/allstudents",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"allstudents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All PASS Students In Course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/student/allstudents",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"allstudents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All FAIL Students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/student/allstudents",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"allstudents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Student By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/student/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Student By ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/student/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"student",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Feb 2023 21:53:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Ayman Ramadan\",\n    \"email\": \"Ayman.Ramadan611@gmail.com\",\n    \"level\": 2,\n    \"mobile\": \"01149460094\",\n    \"schoolStudent\": {\n        \"id\": 1,\n        \"name\": \"Narmer International School\",\n        \"country\": \"Egypt\"\n    },\n    \"coursesList\": [\n        {\n            \"id\": 2,\n            \"courseName\": \"Share3a\",\n            \"courseCode\": \"SH-20\",\n            \"department\": \"DA\"\n        },\n        {\n            \"id\": 1,\n            \"courseName\": \"Grammer\",\n            \"courseCode\": \"GR-20\",\n            \"department\": \"DA\"\n        },\n        {\n            \"id\": 3,\n            \"courseName\": \"Bala9a\",\n            \"courseCode\": \"BA-20\",\n            \"department\": \"DA\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Student By Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/student/email/Mohamed.Ramadan611@gmail.com",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"email",
+								"Mohamed.Ramadan611@gmail.com"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Student By Email",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/student/email/Mohamed.Ramadan611@gmail.com",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"student",
+										"email",
+										"Mohamed.Ramadan611@gmail.com"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Disposition",
+									"value": "inline;filename=f.txt"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Feb 2023 22:06:52 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Mohamed Ramadan\",\n    \"email\": \"Mohamed.Ramadan611@gmail.com\",\n    \"level\": 3,\n    \"mobile\": \"01149460094\",\n    \"schoolStudent\": {\n        \"id\": 1,\n        \"name\": \"Narmer International School\",\n        \"country\": \"Egypt\"\n    },\n    \"coursesList\": [\n        {\n            \"id\": 1,\n            \"courseName\": \"Java\",\n            \"courseCode\": \"JAVA-20\",\n            \"department\": \"CS\"\n        },\n        {\n            \"id\": 3,\n            \"courseName\": \"Spring Boot\",\n            \"courseCode\": \"SP-20\",\n            \"department\": \"CS\"\n        },\n        {\n            \"id\": 2,\n            \"courseName\": \"Database\",\n            \"courseCode\": \"DB-20\",\n            \"department\": \"CS\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Teacher",
+			"item": [
+				{
+					"name": "Add School to Teacher",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"ElRamly@FCAI-CU.edu.eg\",\r\n    \"schoolId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/teacher/addschool?school=Helwan International School&email=Nour@FCAI-CU.edu.eg",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"teacher",
+								"addschool"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "ElRamly@FCAI-CU.edu.eg",
+									"disabled": true
+								},
+								{
+									"key": "school",
+									"value": "Helwan International School"
+								},
+								{
+									"key": "email",
+									"value": "Nour@FCAI-CU.edu.eg"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Course to Teacher",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"ElRamly@FCAI-CU.edu.eg\",\r\n    \"schoolId\" : \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/teacher/addcourse?email=ElRamly@FCAI-CU.edu.eg&courseName=Java",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"teacher",
+								"addcourse"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "ElRamly@FCAI-CU.edu.eg"
+								},
+								{
+									"key": "courseName",
+									"value": "Java"
+								},
+								{
+									"key": "email",
+									"value": "Nour@FCAI-CU.edu.eg",
+									"disabled": true
+								},
+								{
+									"key": "courseName",
+									"value": "signal",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Teacher Add Exam",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"exam\" : \"Are you good in Signal ?\",\r\n    \"modelAnswer\" :\"Yes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/teacher/addexam?email=Nour@FCAI-CU.edu.eg",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"teacher",
+								"addexam"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "ElRamly@FCAI-CU.edu.eg",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "Nour@FCAI-CU.edu.eg"
+								},
+								{
+									"key": "modelAnswer",
+									"value": "Yes",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Teacher Add Exam",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"exam\" : \"Are you good in Spring Boot ?\",\r\n    \"modelAnswer\" :\"Yes\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/teacher/addexam?email=ElRamly@FCAI-CU.edu.eg",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"teacher",
+										"addexam"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "ElRamly@FCAI-CU.edu.eg"
+										},
+										{
+											"key": "exam",
+											"value": "Are you good in Spring Boot ?",
+											"disabled": true
+										},
+										{
+											"key": "modelAnswer",
+											"value": "Yes",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "18"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Feb 2023 15:15:00 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Your Exam is Added"
+						}
+					]
+				},
+				{
+					"name": "Add Teacher",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"name\" : \"DR-Nour\",\r\n    \"email\": \"Nour@FCAI-CU.edu.eg\",\r\n    \"password\" : \"Nour\",\r\n    \"mobile\" : \"01144996633\"\r\n}\r\n/*\r\n{\r\n    \"name\": \"DR-Mohammed ElRamly\",\r\n    \"email\": \"ElRamly@FCAI-CU.edu.eg\",\r\n    \"password\": \"ElRamly\",\r\n    \"mobile\": \"01144996633\"\r\n}\r\n*/",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/teacher",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"teacher"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Teacher",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"DR-Mohammed ElRamly\",\r\n    \"email\": \"ElRamly@FCAI-CU.edu.eg\",\r\n    \"password\" : \"ElRamly\",\r\n    \"mobile\" : \"01144996633\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/teacher",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"teacher"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Feb 2023 15:14:54 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"DR-Mohammed ElRamly\",\n    \"email\": \"ElRamly@FCAI-CU.edu.eg\",\n    \"password\": \"ElRamly\",\n    \"mobile\": \"01144996633\",\n    \"course\": null,\n    \"school\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/student/courses",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All PASS Students In Course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/student/allstudents",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"allstudents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All FAIL Students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/student/allstudents",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"student",
+								"allstudents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Exam",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"exam\" : \"What do you know about Java Spring Boot ?\",\r\n    \"modelAnswer\" :\"it's a framework to Build enterprise application\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/teacher/update-exam?email=ElRamly@FCAI-CU.edu.eg",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"teacher",
+								"update-exam"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "ElRamly@FCAI-CU.edu.eg"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost:8080",
+			"type": "string"
+		}
+	]
+}
