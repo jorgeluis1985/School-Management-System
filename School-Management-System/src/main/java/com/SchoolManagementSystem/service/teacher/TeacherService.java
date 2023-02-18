@@ -17,4 +17,10 @@ public interface TeacherService {
     String addExam(String email, ExamDtoToEntity exam);
 
     String updateExam(String email, ExamDtoToEntity exam);
+
+    String deleteTeacher(int id);
+
+    TeacherDtoView getTeacherByEmail(String email);
+
+    String deleteTeacherByEmail(String email);
 }

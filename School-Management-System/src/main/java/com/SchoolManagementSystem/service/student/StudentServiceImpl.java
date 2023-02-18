@@ -1,5 +1,6 @@
 package com.SchoolManagementSystem.service.student;
 
+import com.SchoolManagementSystem.config.ApplicationConfig;
 import com.SchoolManagementSystem.dto.courses.CoursesDtoToEntity;
 import com.SchoolManagementSystem.dto.courses.CoursesMapper;
 import com.SchoolManagementSystem.dto.student.StudentDtoToEntity;
@@ -34,13 +35,26 @@ public class StudentServiceImpl implements StudentService {
     private SchoolRepository schoolRepository;
     @Autowired
     private CoursesMapper coursesMapper;
+
+    @Autowired
+    private ApplicationConfig applicationConfig;
     @Override
-    public Student addStudents(StudentDtoToEntity student) {
+    public Student addStudents(StudentDtoToEntity student)
+    {
+
         Student studentEntity = studentMapper.DtoToEntity(student);
-        schoolRepository.findAllByName(studentEntity.getSchoolStudent().getName()).orElseThrow(() -> new UserNotFoundException(STUDENT_NOT_FOUND));
-        studentEntity.getCoursesList().stream().forEach(courses -> {
+        applicationConfig.getStartSchools().stream()
+                .filter(schoolDtoToEntity -> studentEntity.getSchoolStudent().getName().equalsIgnoreCase(schoolDtoToEntity.getName()))
+                .findAny().orElseThrow(() -> new UserNotFoundException("Your School is Not Found"));
+       /* studentEntity.getCoursesList().stream().forEach(courses -> {
             coursesRepository.findAllByCourseName(courses.getCourseName())
                     .orElseThrow(() -> new UserNotFoundException( courses.getCourseName() + " Course is Not Found"));
+        });*/
+        studentEntity.getCoursesList().stream().forEach(courses -> {
+            applicationConfig.getStartCourses().stream().filter(coursesDtoToEntity -> coursesDtoToEntity.getCourseName().equalsIgnoreCase(courses.getCourseName())
+                            && coursesDtoToEntity.getCourseCode().equalsIgnoreCase(courses.getCourseCode())
+                            && coursesDtoToEntity.getDepartment().equalsIgnoreCase(courses.getDepartment()))
+                    .findAny().orElseThrow(() -> new UserNotFoundException("Your Course is Not Found"));
         });
         studentRepository.save(studentEntity);
         return studentEntity;
@@ -122,5 +136,19 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<String> getAllPassStudentsInCourse(String course) {
         return studentRepository.getAllPassStudentsInCourse(course);
+    }
+
+    @Override
+    public String deleteStudent(int id) {
+        studentRepository.findById(id).orElseThrow(() -> new UserNotFoundException(STUDENT_NOT_FOUND));
+        studentRepository.deleteById(id);
+        return "Your Student is Deleted";
+    }
+
+    @Override
+    public String deleteStudentByEmail(String email) {
+        studentRepository.findByEmail(email).orElseThrow(() -> new UserNotFoundException(STUDENT_NOT_FOUND));
+        studentRepository.deleteById(studentRepository.findByEmail(email).get().getId());
+        return "Your Student is Deleted";
     }
 }

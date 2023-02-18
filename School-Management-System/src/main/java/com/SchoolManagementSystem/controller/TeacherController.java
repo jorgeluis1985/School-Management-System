@@ -37,6 +37,11 @@ public class TeacherController {
     {
         return ResponseEntity.ok(teacherService.getTeacherByID(id));
     }
+    @GetMapping("/email/{email}")
+    public ResponseEntity<TeacherDtoView> getTeacherByEmail(@PathVariable("email") String email)
+    {
+        return ResponseEntity.ok(teacherService.getTeacherByEmail(email));
+    }
     @PostMapping("/addexam")
     public ResponseEntity<String> addExam (@RequestParam ("email") String email,
                                            @RequestBody ExamDtoToEntity exam)
@@ -48,5 +53,15 @@ public class TeacherController {
     public ResponseEntity<String> updateExam (@RequestParam ("email") String email , @RequestBody ExamDtoToEntity exam)
     {
         return ResponseEntity.ok(teacherService.updateExam(email,exam));
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteTeacher(@PathVariable ("id") int id)
+    {
+        return ResponseEntity.ok(teacherService.deleteTeacher(id));
+    }
+    @DeleteMapping("/delete/{email}")
+    public ResponseEntity<String> deleteTeacherByEmail(@PathVariable("email") String email)
+    {
+        return ResponseEntity.ok(teacherService.deleteTeacherByEmail(email));
     }
 }

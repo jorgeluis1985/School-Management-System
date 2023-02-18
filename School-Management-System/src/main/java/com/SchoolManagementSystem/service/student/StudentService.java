@@ -28,4 +28,8 @@ public interface StudentService {
     List<String> getAllFailStudents();
 
     List<String> getAllPassStudentsInCourse(String course);
+
+    String deleteStudent(int id);
+
+    String deleteStudentByEmail(String email);
 }

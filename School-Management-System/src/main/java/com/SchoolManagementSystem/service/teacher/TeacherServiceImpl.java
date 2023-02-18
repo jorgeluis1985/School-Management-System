@@ -86,4 +86,23 @@ public class TeacherServiceImpl implements TeacherService {
         examsRepository.save(examUpdated);
         return "Your Exam is Updated";
     }
+
+    @Override
+    public String deleteTeacher(int id) {
+        teacherRepository.findById(id).orElseThrow(() -> new UserNotFoundException(TEACHER_NOT_FOUND));
+        teacherRepository.deleteById(id);
+        return "Your Teacher is Deleted";
+    }
+    @Override
+    public TeacherDtoView getTeacherByEmail(String email) {
+        return teacherMapper.TeacherEntityToView(teacherRepository.findByEmail(email).orElseThrow(() -> new UserNotFoundException(TEACHER_NOT_FOUND)));
+    }
+    @Override
+    public String deleteTeacherByEmail(String email) {
+        teacherRepository.findByEmail(email).orElseThrow(() -> new UserNotFoundException(TEACHER_NOT_FOUND));
+        teacherRepository.deleteById(teacherRepository.findByEmail(email).get().getId());
+        return "Your Teacher is Deleted";
+    }
+
+
 }

@@ -28,4 +28,6 @@ public interface StudentRepository extends JpaRepository<Student,Integer> {
             , nativeQuery = true)
 
     List<String> getAllPassStudentsInCourse(@Param("course") String course);
+
+    void deleteByEmail(String email);
 }

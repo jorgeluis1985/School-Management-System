@@ -83,4 +83,14 @@ public class StudentController {
     {
         return ResponseEntity.ok(studentService.getAllPassStudentsInCourse(course));
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteStudent(@PathVariable("id") int id)
+    {
+        return ResponseEntity.ok(studentService.deleteStudent(id));
+    }
+    @DeleteMapping("/delete/{email}")
+    public ResponseEntity<String> deleteStudentByEmail(@PathVariable("email") String email)
+    {
+        return ResponseEntity.ok(studentService.deleteStudentByEmail(email));
+    }
 }
