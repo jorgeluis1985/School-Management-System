@@ -35,7 +35,6 @@ public class StudentServiceImpl implements StudentService {
     private SchoolRepository schoolRepository;
     @Autowired
     private CoursesMapper coursesMapper;
-
     @Autowired
     private ApplicationConfig applicationConfig;
     @Override
